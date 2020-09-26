@@ -18,4 +18,6 @@ I finally have a personal website -- how exciting!
     * Instagram
     * Github
     * Muckrack
-    
+
+## Stack
+HTML/CSS/Vanilla JS (for now!)
