@@ -1,17 +1,25 @@
 <html>
     <head>
         <title>Patricia Kusumaningtyas</title>
+        
         <link rel="stylesheet" type="text/css" href="style.css">
+        
     </head>
     <body>
-        <div id="start_page">
-            <h1>Patricia Kusumaningtyas</h1>
-            <button class="top_button">About</button>
-            <button class="top_button">Education</button>
-            <button class="top_button">Experience</button>
-            <button class="top_button">Publication</button>
-            <button class="top_button">Links</button>
+        <h1>Patricia Kusumaningtyas</h1>
+        <div id="home-page-buttons" class="home-buttons">
+            <button
+                v-for="page in pages"
+                v-bind:key="page"
+                v-bind:class="['top-button', { active: currentPage === page }]"
+                v-on:click="currentPage = page"
+            >
+                {{ page }}
+            </button>
+              
+            <component v-bind:is="currentPageComponent" class="page"></component>
         </div>
-        
+        <script src="/Users/pattie/vue.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
