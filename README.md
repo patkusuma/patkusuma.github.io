@@ -20,4 +20,4 @@ I finally have a personal website -- how exciting!
     * Muckrack
 
 ## Stack
-HTML/CSS/Vanilla JS (for now!)
+HTML/CSS/JavaScript/Vue.js
