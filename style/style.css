@@ -1,8 +1,33 @@
 h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+    font-family: 'Lora', serif;
+}
+
+h3 {
+    font-family: 'Lora', serif;
     font-style: italic;
-    color: blue;
+}
+
+p {
+    font-family: 'Merriweather', serif;
+}
+
+a:link {
+    color: grey;
+    text-decoration: none;
+}
+
+a:hover {
+    color: grey;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: grey;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%
 }
 
 .top-button {
