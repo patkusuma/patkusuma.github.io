@@ -1,10 +1,25 @@
+body {
+	margin: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+	width: 50%;
+	border: 3px solid black;
+	padding: 30px;
+	text-align: center;
+	font-family: 'Lora', serif;
+    color: black;
+}
+
+.links {
+    align-content: center;
+}
+
 h1 {
     font-family: 'Lora', serif;
 }
 
 h3 {
-    font-family: 'Lora', serif;
-    font-style: italic;
+    font-family: 'Merriweather', serif;
 }
 
 p {

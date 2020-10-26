@@ -1,100 +1,78 @@
 Vue.component('tagline', {
     template: `
-        <h1>Patricia Kusumaningtyas</h1>
-        <h3>Software Engineer, Educator, Writer</h3>
+    <div id="tagline">
+        <h1>patricia kusumaningtyas</h1>
+        <p>software engineer, educator, writer</p>
+        <br />
+    </div>
     `
 })
 
 Vue.component('menu-buttons', {
     template: `
     <button v-for="tab in tabs" @click="selectedTab = tab"> {{ tab }} </button>
-    <div v-show="selectedTab === 'About'">
+    <br /><br /> <br />
+    <div v-show="selectedTab === 'about'">
         <about-page></about-page>
     </div>
-    <div v-show="selectedTab === 'Experience'">
+    <div v-show="selectedTab === 'experience'">
         <experience-page></experience-page>
     </div>
-    <div v-show="selectedTab === 'Portfolio'">
+    <div v-show="selectedTab === 'portfolio'">
         <portfolio-page></portfolio-page>
     </div>
-    <div v-show="selectedTab === 'Publications & Features'">
+    <div v-show="selectedTab === 'publications & features'">
         <pubs-page></pubs-page>
     </div>
-    <div v-show="selectedTab === 'Blog'">
+    <div v-show="selectedTab === 'blog'">
         <blog-page></blog-page>
     </div>
-    <div v-show="selectedTab === 'Contact'">
+    <div v-show="selectedTab === 'contact'">
         <contact-page></contact-page>
-    </div>`,
+    </div>
+    `,
     data: function () {
         return {
-            tabs: ['About', 'Experience', 'Portfolio', 'Publications & Features', 'Blog', 'Contact'],
-            selectedTab: 'About'
+            tabs: ['about', 'experience', 'portfolio', 'publications & features', 'blog', 'contact'],
+            selectedTab: 'about'
     }}
 });
 
-Vue.component('about-page', {
+Vue.component('links-footer', {
     template: `
-    <table id="about">
-        <tr>
-            <td>
-                <img src="scripts/resources/selfphoto.png" />
-            </td>
-            <td>
-                <div id="bio">
-                <p>I'm a junior software engineer based in Brooklyn, NY. </p>
-                <p>Born and raised in Jakarta, Indonesia, I moved to the United States to earn my associate's degree in computer science from 
-                Green River College (Auburn, Washington) in 2018 and my bachelor's degree in computer science from Columbia University 
-                (New York, New York) in 2020. I currently work at <a href="http://www.jri-america.com/">JRI America</a>; previously,
-                I was a software engineer intern at <a href="https://www.gojek.com/">Gojek</a> in 2019 and a graphic design intern at 
-                <a href="https://korporasi.kompas.id/">Kompas</a> in 2015.</p>
-                <p>Besides hacking, coding, and squashing bugs, I am also passionate in education and writing. In my college career, I was
-                a writing consultant at both Columbia and Green River, and I continued my passion post-graduation by volunteering in 
-                organizations such as <a href="https://www.btny.org/">Breakthrough New York</a> and <a href="https://www.girlsclub.org/">
-                the Lower East Side Girls Club</a>. I also publish my own pieces through various media publications; my works 
-                have been published in websites such as <a href="https://www.whiteboardjournal.com/">Whiteboard Journal</a> and
-                <a href="https://magdalene.co/">Magdalene</a>.</p>
-                <p>In my spare time, I like to listen to music, cook, and dismantle the bourgeoisie.</p>
-                </div>
-            </td>
-        </tr>
-    </table>
-    `
-});
-
-Vue.component('experience-page', {
-    template: `
-    <h3>Education</h3>
-    <ul>
-        <li v-for="education in educationHistory">
-        </li>
-    </ul>
+    <p id="links">
+        <span v-for="item in links">
+            <a href="{{ item.link }}">{{ item.name }}</a>
+            <span v-if="item.name !== 'linkedin'"> | </span>
+        </span>
+    </p>
     `,
-    data: experienceData()
-});
-
-Vue.component('portfolio-page', {
-    template: `
-    <p>Coming soon!</p>
-    `
-});
-
-Vue.component('pubs-page', {
-    template: `
-    <p>Publications page</p>
-    `
-});
-
-Vue.component('blog-page', {
-    template: `
-    <p>Blog page</p>
-    `
-});
-
-Vue.component('contact-page', {
-    template: `
-    <p>Contact page</p>
-    `
+    data: function() {
+        return {
+            links: [
+                {
+                    name: "spotify",
+                    link: "https://open.spotify.com/user/kusumaningtyas?si=mcNpFuR8T6y83gPRTQcnDQ"
+                },
+                {
+                    name: "instagram",
+                    link: "https://www.instagram.com/pat.kusuma/"
+                },
+                {
+                    name: "github",
+                    link: "https://github.com/patkusuma"
+                },
+                {
+                    name: "muckrack",
+                    link: "https://muckrack.com/patricia-kusumaningtyas"
+                },
+                {
+                    name: "linkedin",
+                    link: "https://www.linkedin.com/in/patricia-kusumaningtyas/"
+                }
+            ]
+        }
+    }
 });
 
 new Vue({
